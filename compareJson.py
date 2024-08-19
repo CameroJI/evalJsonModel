@@ -18,6 +18,7 @@ def evaluateFolders(root):
     txtReales = join(root, txtReales)
     txtAtaque = join(root, txtAtaque)
     
+    i=0
     igualesAtaques = 0
     igualesReales = 0
     countAtaqueViejo = 0
@@ -83,7 +84,8 @@ def evaluateFolders(root):
                         countAtaqueViejo+=1
                         
                     print('-' * 90)
-                                
+                    i+=1
+            
     txtWrite(txtDiferente, diferenteslist)
     txtWrite(txtReales, realesList)
     txtWrite(txtAtaque, ataquesList)
