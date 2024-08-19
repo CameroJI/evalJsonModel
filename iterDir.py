@@ -58,7 +58,7 @@ def evaluateFolders(model, root, height, width):
                 score, ocurrences, prediction = evaluate(model, X_LL, X_LH, X_HL, X_HH, Y)
                 createJson(lastJsonWrite, basename(root), basename(dirPath), last, score, ocurrences, prediction)
                 
-                print(f'{idx+1}/{len(listdir(root))}')
+                print(f'\n{idx+1}/{len(listdir(root))}\n')
                 
                 # try:
                 #     firtJson = elementsFromJson(getScoresFromJSON(join(dirPath, firtJson)))
@@ -134,10 +134,10 @@ def createJson(path, basename, dirPath, n, score, ocurrences, prediction):
             "prediction": prediction
         }
     }
-    print(f'Archivo: {join(basename, dirPath, str(n))}\nResults: ', end='')
+    print(f'Archivo: {join(basename, dirPath, f'{n}_front_large.jpg')}\nResults: ', end='')
     print(results['results'])
     print(f'Guardado en {path}')
-    
+    print('-' * 70)
     with open(path, 'w') as json_file:
         json.dump(results, json_file, indent=4) 
         
