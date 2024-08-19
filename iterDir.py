@@ -134,7 +134,8 @@ def createJson(path, basename, dirPath, n, score, ocurrences, prediction):
             "prediction": prediction
         }
     }
-    print(f'Archivo: {join(basename, dirPath, n)}\nResults: ', end='')
+    finalPath = join(basename, dirPath, n)
+    print(f'Archivo: {finalPath}\nResults: ', end='')
     print(results['results'])
     print(f'Guardado en {path}')
     
