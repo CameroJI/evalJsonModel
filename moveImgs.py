@@ -12,7 +12,7 @@ def moveImages(archivo_txt, carpeta_destino):
         for linea in file:
             linea = linea.strip()
             
-            ruta_imagen = '-'.join(linea.split('-')[:2])
+            ruta_imagen = linea.split('-')[0]
             
             subcarpeta = os.path.basename(os.path.dirname(ruta_imagen))
             
