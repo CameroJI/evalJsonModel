@@ -87,9 +87,6 @@ def evaluateFolders(root):
                     
                     i+=1
             
-                if i >= n and n != 0:
-                    break
-            
     txtWrite(txtDiferente, diferenteslist)
     txtWrite(txtReales, realesList)
     txtWrite(txtAtaque, ataquesList)
