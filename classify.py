@@ -151,7 +151,6 @@ def parse_arguments(argv):
     
 def main(args):
     txtPath = args.txtPath  
-    diferenciasPath = args.diferenciasPath
     
     ImageClassifier(txtPath) 
     
