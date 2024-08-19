@@ -305,7 +305,6 @@ def parse_arguments(argv):
     
     parser.add_argument('--rootPath', type=str, help='Directory with (Moiré pattern) images.', default='./')
     
-    parser.add_argument('--batch_size', type=int, help='Batch size for epoch in training', default=1)
     parser.add_argument('--height', type=int, help='Image height resize', default=800)
     parser.add_argument('--width', type=int, help='Image width resize', default=1400)
         
