@@ -6,11 +6,10 @@ import argparse
 
 def main(args):
     rootPath = args.rootPath
-    numberFolders = args.numberFolders
-    
-    evaluateFolders(rootPath, numberFolders)
+        
+    evaluateFolders(rootPath)
 
-def evaluateFolders(root, n=0):
+def evaluateFolders(root):
     txtDiferente = 'diferencias.txt'
     txtReales = 'Reales.txt'
     txtAtaque = 'Ataque.txt'
@@ -159,8 +158,6 @@ def parse_arguments(argv):
     parser = argparse.ArgumentParser()
         
     parser.add_argument('--rootPath', type=str, help='Directory with (Moiré pattern) images.', default='./')
-
-    parser.add_argument('--numberFolders', type=int, help='Number of folders', default=0)
         
     return parser.parse_args(argv)
     
