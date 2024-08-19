@@ -1,6 +1,8 @@
 from PIL import Image, ImageTk
 import tkinter as tk
 import os
+import sys
+import argparse
 
 class ImageClassifier:
     def __init__(self, txt_path):
@@ -45,8 +47,7 @@ class ImageClassifier:
             for line in lines:
                 path_label = line.split(':')
                 path = path_label[0]
-                path = (path.replace('/home/ec2-user/Moire/Moire/id_android/id_android_000/', '').split('-')[0]).replace('/','-')
-                path = f'/Users/jorgecamero/Downloads/diferencias/{path}'
+                path = path.split('-')[0]
                 label_info = [path_label[1].strip().split('-')[0], path_label[2].split('\n')[0]]
                 print(label_info)
                 labels.append({
@@ -141,8 +142,18 @@ class ImageClassifier:
         self.current_index += 1
         self.show_image()
 
-# Ruta del archivo de texto con las imágenes
-txt_path = '/Users/jorgecamero/Downloads/diferencias.txt'
-
-# Ejecutar la interfaz gráfica
-ImageClassifier(txt_path)
+def parse_arguments(argv):
+    parser = argparse.ArgumentParser()
+        
+    parser.add_argument('--txtPath', type=str, help='Directory with (Moiré pattern) images.', default='./')
+    
+    return parser.parse_args(argv)
+    
+def main(args):
+    txtPath = args.txtPath  
+    diferenciasPath = args.diferenciasPath
+    
+    ImageClassifier(txtPath) 
+    
+if __name__ == '__main__':
+    main(parse_arguments(sys.argv[1:]))
