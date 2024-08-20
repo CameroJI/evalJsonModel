@@ -25,6 +25,14 @@ def moveImages(archivo_txt, carpeta_destino):
                 print(f"Imagen copiada y renombrada: {nuevo_nombre}")
             except FileNotFoundError:
                 print(f"Error al copiar: {ruta_imagen}")
+                
+def txtGetFiles(path):
+    txtList = [join(path, file) for file in listdir(path) if file.endswith('.txt')]
+    
+    for txt in txtList:
+        txtName  = join(path, basename(txt).split('.')[0])
+        print(txtName)
+        moveImages(txt, join(path, txtName))
 
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
@@ -35,12 +43,8 @@ def parse_arguments(argv):
 
 def main(args):
     dirPath = args.dirPath
-    txtList = [join(dirPath, file) for file in listdir(dirPath) if file.endswith('.txt')]
     
-    for txt in txtList:
-        txtName  = join(dirPath, basename(txt).split('.')[0])
-        print(txtName)
-        moveImages(txt, join(dirPath, txtName))
+    txtGetFiles(dirPath)
 
 if __name__ == '__main__':
     main(parse_arguments(sys.argv[1:]))

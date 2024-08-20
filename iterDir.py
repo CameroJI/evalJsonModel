@@ -5,8 +5,6 @@ import argparse
 import tensorflow as tf
 from os import listdir
 from os.path import join, basename, isdir
-from math import pi
-from skimage.filters import gabor
 import numpy as np
 from sklearn import preprocessing
 from PIL import Image
