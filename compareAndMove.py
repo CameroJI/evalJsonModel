@@ -1,4 +1,4 @@
-from iterDir import evaluateFolders
+from compareJson import compareJsonFolders
 from moveImgs import txtGetFiles
 import sys
 import argparse
@@ -6,7 +6,7 @@ import argparse
 def main(args):
     dirPath = args.dirPath
     
-    evaluateFolders(dirPath)
+    compareJsonFolders(dirPath)
     txtGetFiles(dirPath)
 
 def parse_arguments(argv):
