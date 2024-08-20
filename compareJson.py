@@ -95,7 +95,7 @@ def evaluateFolders(root):
     print(f'Imágenes detectadas diferente: {diferentes}')
     print(f'Nuevo: {diferentesAtaqueNuevo}\nViejo: {diferentesAtaqueViejo}\n')
     
-    print(f'Imágenes detectadas iguales:\nReales: {igualesReales}\nAtaque: {igualesAtaques}')
+    print(f'Imágenes detectadas iguales: {iguales}\nReales: {igualesReales}\nAtaque: {igualesAtaques}')
     
 def txtWrite(txtFile, imgList):
     with open(txtFile, 'w') as archivo:
