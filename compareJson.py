@@ -5,9 +5,9 @@ import sys
 import argparse
 
 def main(args):
-    rootPath = args.rootPath
+    dirPath = args.dirPath
         
-    evaluateFolders(rootPath)
+    evaluateFolders(dirPath)
 
 def evaluateFolders(root):
     txtDiferente = 'diferencias.txt'
