@@ -153,7 +153,7 @@ def existCheck(root, fileList):
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
         
-    parser.add_argument('--rootPath', type=str, help='Directory with (Moiré pattern) images.', default='./')
+    parser.add_argument('--dirPath', type=str, help='Directory with (Moiré pattern) images.', default='./')
         
     return parser.parse_args(argv)
     
