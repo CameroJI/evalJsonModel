@@ -1,4 +1,4 @@
-from os import listdir, makedirs
+from os import listdir, makedirs, remove
 from os.path import join, basename, dirname
 from shutil import copy, move
 import argparse
@@ -26,8 +26,11 @@ def moveImages(archivo_txt, carpeta_destino):
                 print(f"Error al copiar: {ruta_imagen}")
     
     txtFileNew = join(dirname(dirname(archivo_txt)), basename(archivo_txt))
-    move(archivo_txt, txtFileNew)
     
+    if basename(archivo_txt).split('.')[0] == 'diferencias':
+        move(archivo_txt, txtFileNew)
+    else:
+        remove(archivo_txt)
                 
 def txtGetFiles(path):
     txtList = [join(path, file) for file in listdir(path) if file.endswith('.txt')]
