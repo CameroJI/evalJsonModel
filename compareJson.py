@@ -7,9 +7,9 @@ import argparse
 def main(args):
     dirPath = args.dirPath
         
-    evaluateFolders(dirPath)
+    compareJsonFolders(dirPath)
 
-def evaluateFolders(root):
+def compareJsonFolders(root):
     txtDiferente = 'diferencias.txt'
     txtReales = 'Reales.txt'
     txtAtaque = 'Ataque.txt'
